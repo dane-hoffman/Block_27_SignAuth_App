@@ -12,7 +12,7 @@ const SignUpForm = ({setToken}) => {
         try {
             const response = await fetch('https://fsa-jwt-practice.herokuapp.com/signup',{
                 method: 'POST',
-                header: {
+                headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({

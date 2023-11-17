@@ -20,8 +20,6 @@ const Authenticate = ({token}) => {
         catch (error) {
         setError(error.message);
          }
-         console.log(token);
-         console.log(successMessage);
     }
     return (
     <>
