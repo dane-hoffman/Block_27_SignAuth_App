@@ -12,7 +12,7 @@ const Authenticate = ({token}) => {
         catch (error) {
         setError(error.message);
          }
-         console.log("I've been clicked!")
+         console.log(token);
     }
     return (
     <>
