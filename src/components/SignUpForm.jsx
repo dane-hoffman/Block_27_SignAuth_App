@@ -9,6 +9,8 @@ const SignUpForm = () => {
     async function handleSubmit(event) {
         event.preventDefault();
         console.log("Hello")
+        console.log(username);
+        console.log(password);
     }
 
     return(
@@ -25,8 +27,6 @@ const SignUpForm = () => {
     </form>
     </>
     )
-    console.log(username);
-    console.log(password);
 
 }
 
