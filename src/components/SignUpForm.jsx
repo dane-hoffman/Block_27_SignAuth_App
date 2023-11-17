@@ -8,21 +8,26 @@ const SignUpForm = () => {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        console.log("Hello")
-        console.log(username);
-        console.log(password);
-    }
+    
+        try {
+            const response = await fetch('https://fsa-jwt-practice.herokuapp.com/signup')
+            console.log(response);
+        } catch (error) {
+          setError(error.message);
+        }
+      }
 
     return(
     <>
         <h2>Sign Up!</h2>
+        {error && <p>{error}</p>}
         <form onSubmit={handleSubmit}>
     <label>
-        Username: <input value={username} onChange={(event)=> setUsername(event.target.value)}/>
-    </label>
+        Username: <input value={username} onChange={(e)=> setUsername(e.target.value)}/>
+    </label><br></br>
     <label>
-        Password: <input value={password} onChange={(event)=> setPassword(event.target.value)}/>
-    </label>
+        Password: <input value={password} onChange={(e)=> setPassword(e.target.value)}/>
+    </label><br></br>
     <button type='submit'>Submit</button>
     </form>
     </>
