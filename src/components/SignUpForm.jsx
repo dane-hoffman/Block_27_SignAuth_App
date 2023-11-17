@@ -6,24 +6,27 @@ const SignUpForm = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
 
-    // const handleSubmit = async (event) => {
-
-    // }
+    async function handleSubmit(event) {
+        event.preventDefault();
+        console.log("Hello")
+    }
 
     return(
     <>
         <h2>Sign Up!</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
     <label>
         Username: <input value={username} onChange={(event)=> setUsername(event.target.value)}/>
     </label>
     <label>
-        Password: <input value={password} onChange={(even)=> setPassword(event.target.value)}/>
+        Password: <input value={password} onChange={(event)=> setPassword(event.target.value)}/>
     </label>
     <button type='submit'>Submit</button>
     </form>
     </>
     )
+    console.log(username);
+    console.log(password);
 
 }
 
